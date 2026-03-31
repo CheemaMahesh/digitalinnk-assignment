@@ -1,11 +1,11 @@
-import type { ProductCardProps } from "../../types";
-import { useAppDispatch, useAppSelector } from "../../store/store";
-import { addItem, decrementItem } from "../../store/cart";
+import type { ProductCardProps } from "../../../types";
+import { useAppDispatch, useAppSelector } from "../../../store/store";
+import { addItem, decrementItem } from "../../../store/cart";
 import { lazy, Suspense } from "react";
-import { getProductEmoji } from "../../utils/functions";
+import { getProductEmoji } from "../../../utils/functions";
 
-const MinusIcon = lazy(() => import("../../assets/nav/minus"));
-const PlusIcon = lazy(() => import("../../assets/nav/pluse"));
+const MinusIcon = lazy(() => import("../../../assets/nav/minus"));
+const PlusIcon = lazy(() => import("../../../assets/nav/pluse"));
 
 export default function ProductCard({ product }: ProductCardProps) {
   const dispatch = useAppDispatch();

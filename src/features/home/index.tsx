@@ -1,5 +1,5 @@
 import Nav from "../../components/nav";
-import ProductCard from "./product-card";
+import ProductCard from "./components/product-card";
 import { products } from "../../utils/data";
 
 export default function Home() {
