@@ -5,7 +5,7 @@ A simple grocery shopping cart application built with React, Redux Toolkit and T
 <img width="1918" height="871" alt="image" src="https://github.com/user-attachments/assets/a68ccca6-a219-45a0-a7ba-86292a5c73a5" />
 <img width="1918" height="867" alt="image" src="https://github.com/user-attachments/assets/1d720ad3-b538-436c-9b3b-5f7917068ffa" />
 
-**Live Demo:** https://earnest-malabi-50943d.netlify.app/
+**Live Demo:** https://69cbb2c31efd0f321c8cf792--earnest-malabi-50943d.netlify.app/
 
 ## Folder Structure
 
