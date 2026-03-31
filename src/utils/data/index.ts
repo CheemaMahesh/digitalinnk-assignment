@@ -27,7 +27,7 @@ export const products: Product[] = [
   },
   {
     id: 5,
-    name: "Milk",
+    name: "Butter",
     price: 1.2,
     currency: "£",
   },

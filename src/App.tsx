@@ -1,7 +1,12 @@
 import "./App.css";
+import Home from "./features/home";
 
 function App() {
-  return <section className="bg-red-500 w-screen h-screen">ada</section>;
+  return (
+    <section>
+      <Home />
+    </section>
+  );
 }
 
 export default App;
