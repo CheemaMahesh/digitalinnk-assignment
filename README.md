@@ -1,6 +1,11 @@
 # DigitalInnk Shopping Cart
 
 A simple grocery shopping cart application built with React, Redux Toolkit and TypeScript. Users can add products to cart and see automatic discounts applied at checkout.
+<img width="1918" height="870" alt="image" src="https://github.com/user-attachments/assets/ba377b5f-42c5-40f9-a03b-6dd0803a5439" />
+<img width="1918" height="871" alt="image" src="https://github.com/user-attachments/assets/a68ccca6-a219-45a0-a7ba-86292a5c73a5" />
+<img width="1918" height="867" alt="image" src="https://github.com/user-attachments/assets/1d720ad3-b538-436c-9b3b-5f7917068ffa" />
+
+
 
 ## Folder Structure
 
