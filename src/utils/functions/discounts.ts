@@ -20,7 +20,7 @@ export function calculateDiscounts(cart: CartItem[]): DiscountResult {
   let totalDiscount = 0;
 
   const getQuantity = (productId: number) => {
-    const item = cart.find((i) => i.productId === productId);
+    const item = cart.find((i) => Number(i.productId) === productId);
     return item?.quantity || 0;
   };
 
