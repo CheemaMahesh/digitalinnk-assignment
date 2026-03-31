@@ -5,10 +5,14 @@ import {
   useSelector,
   type TypedUseSelectorHook,
 } from "react-redux";
+import productReducer from "./product";
+import checkoutReducer from "./checkout";
 
 const store = configureStore({
   reducer: {
     cart: cartReducer,
+    product: productReducer,
+    checkout: checkoutReducer,
   },
 });
 

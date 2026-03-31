@@ -1,25 +1,25 @@
-import type { ProductCardProps } from "../../../types";
-import { useAppDispatch, useAppSelector } from "../../../store/store";
-import { addItem, decrementItem } from "../../../store/cart";
 import { lazy, Suspense } from "react";
+import { useCart } from "../../../hooks/useCart";
+import { useAppSelector } from "../../../store/store";
+import type { ProductCardProps } from "../../../types";
 import { getProductEmoji } from "../../../utils/functions";
 
 const MinusIcon = lazy(() => import("../../../assets/nav/minus"));
 const PlusIcon = lazy(() => import("../../../assets/nav/pluse"));
 
 export default function ProductCard({ product }: ProductCardProps) {
-  const dispatch = useAppDispatch();
+  const { onAddToCart, onRemoveFromCart } = useCart();
   const cartItem = useAppSelector((state) =>
-    state.cart.find((item) => item.productId === product.id),
+    state.cart.find((item) => item.productId === product._id),
   );
   const quantity = cartItem?.quantity || 0;
 
-  const handleAddToCart = () => {
-    dispatch(addItem(product.id));
+  const handleAddToCart = async () => {
+    await onAddToCart(product._id);
   };
 
-  const handleDecrement = () => {
-    dispatch(decrementItem(product.id));
+  const handleDecrement = async () => {
+    await onRemoveFromCart(product._id);
   };
 
   return (

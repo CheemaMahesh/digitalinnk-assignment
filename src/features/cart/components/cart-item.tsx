@@ -1,31 +1,30 @@
-import { lazy, memo, Suspense, useCallback } from "react";
-import { addItem, decrementItem, removeItem } from "../../../store/cart";
-import { useAppDispatch } from "../../../store/store";
-import type { CartItem as CartItemType, Product } from "../../../types";
+import { lazy, memo, Suspense } from "react";
+import { useCart } from "../../../hooks/useCart";
+import type { ApiCartItem, ApiProduct } from "../../../types";
 import { getProductEmoji } from "../../../utils/functions";
 
 const MinusIcon = lazy(() => import("../../../assets/nav/minus"));
 const PlusIcon = lazy(() => import("../../../assets/nav/pluse"));
 
 interface CartItemProps {
-  item: CartItemType;
-  product: Product;
+  item: ApiCartItem;
+  product: ApiProduct;
 }
 
 const CartItem = memo(function CartItem({ item, product }: CartItemProps) {
-  const dispatch = useAppDispatch();
+  const { onAddToCart, onRemoveFromCart, onDeleteCartItem } = useCart();
 
-  const handleIncrement = useCallback(() => {
-    dispatch(addItem(item.productId));
-  }, [dispatch, item.productId]);
+  const handleIncrement = () => {
+    onAddToCart(item.productId, true);
+  };
 
-  const handleDecrement = useCallback(() => {
-    dispatch(decrementItem(item.productId));
-  }, [dispatch, item.productId]);
+  const handleDecrement = async () => {
+    onRemoveFromCart(item.productId, true);
+  };
 
-  const handleRemove = useCallback(() => {
-    dispatch(removeItem(item.productId));
-  }, [dispatch, item.productId]);
+  const handleRemove = () => {
+    onDeleteCartItem(item.productId);
+  };
 
   const itemTotal = product.price * item.quantity;
 
